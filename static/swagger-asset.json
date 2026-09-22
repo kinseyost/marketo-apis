@@ -6078,7 +6078,7 @@
           "Smart Campaigns"
         ],
         "summary": "Add Step Choice",
-        "description": "Adds a choice to an existing flow step. Use the Update Flow Step Choice endpoint to configure the choice condition and values. Required Permissions: Read-Write Assets",
+        "description": "Adds a choice to an existing flow step. The new choice is added as the first choice. Use the Update Flow Step Choice endpoint to configure the choice condition and values. Required Permissions: Read-Write Assets",
         "operationId": "addSmartCampaignFlowStepChoiceUsingPOST",
         "consumes": [
           "application/x-www-form-urlencoded"
@@ -6290,7 +6290,7 @@
           "Smart Campaigns"
         ],
         "summary": "Reorder Flow Step Choice",
-        "description": "Moves a choice to a new position within a flow step. Required Permissions: Read-Write Assets",
+        "description": "Moves a non-default choice to a new position among the non-default choices of a flow step. The step must have at least two non-default choices. The default choice is always last. Required Permissions: Read-Write Assets",
         "operationId": "reorderSmartCampaignFlowStepChoiceUsingPOST",
         "consumes": [
           "application/x-www-form-urlencoded"
@@ -6326,7 +6326,7 @@
           {
             "name": "newSeqNumZeroBased",
             "in": "query",
-            "description": "New 0-based position for the choice. Must be non-negative",
+            "description": "New 0-based position of the choice among the non-default choices. Must differ from the choice's current position",
             "required": true,
             "type": "integer",
             "format": "int32"
